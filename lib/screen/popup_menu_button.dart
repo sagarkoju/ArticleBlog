@@ -50,16 +50,28 @@ class _PopMenuButtonScreenState extends State<PopMenuButtonScreen> {
   void onSelected(BuildContext context, MenuItem item) {
     switch (item) {
       case MenuItems.menuSettings:
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const SettingScreen()));
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => SettingScreen(
+                      menuItem: item,
+                    )));
         break;
       case MenuItems.menuCheck:
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const ShoppingScreen()));
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => ShoppingScreen(
+                      menuItem: item,
+                    )));
         break;
       case MenuItems.menuRate:
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const ShareScreen()));
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => ShareScreen(
+                      menuItem: item,
+                    )));
         break;
     }
   }

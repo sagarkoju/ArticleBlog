@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:vlogpost/screen/bottom_overflow.dart';
+import 'package:vlogpost/screen/dropdown.dart';
 import 'package:vlogpost/screen/duplicate_list.dart';
 import 'package:vlogpost/screen/fold_screen.dart';
 import 'package:vlogpost/screen/gridview.dart';
@@ -170,6 +171,19 @@ class _TextScreenState extends State<TextScreen> {
                           builder: (_) => const VisibilityScreen()));
                 },
                 child: const Text('Visibility Widget'),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (_) => const DropDownScreen()));
+                },
+                child: const Text('DropDown in Flutter'),
               ),
             ),
             Container(
