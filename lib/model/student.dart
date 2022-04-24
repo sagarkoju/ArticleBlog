@@ -17,9 +17,9 @@ class Students {
   });
 }
 
-class Food {
+class Fruit {
   String name, desc, url;
-  Food({
+  Fruit({
     required this.name,
     required this.desc,
     required this.url,

@@ -7,7 +7,7 @@ class GridViewDetailScreen extends StatefulWidget {
     required this.food,
   }) : super(key: key);
 
-  final Food food;
+  final Fruit food;
   @override
   State<GridViewDetailScreen> createState() => _GridViewDetailScreenState();
 }

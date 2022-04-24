@@ -11,7 +11,7 @@ class ShimmerScreen extends StatefulWidget {
 }
 
 class _ShimmerScreenState extends State<ShimmerScreen> {
-  List<Food> food = [];
+  List<Fruit> food = [];
 
   @override
   void initState() {
@@ -24,7 +24,7 @@ class _ShimmerScreenState extends State<ShimmerScreen> {
       showEffect = true;
     });
     await Future.delayed(const Duration(seconds: 2), () {});
-    food = List.of(foods);
+    food = List.of(fruits);
     setState(() {
       showEffect = false;
     });
@@ -51,7 +51,7 @@ class _ShimmerScreenState extends State<ShimmerScreen> {
     );
   }
 
-  Widget showFoodsList(Food food) => Card(
+  Widget showFoodsList(Fruit food) => Card(
         child: ListTile(
           title: Text(
             food.name,
@@ -71,14 +71,13 @@ class _ShimmerScreenState extends State<ShimmerScreen> {
         ),
       );
 
-  Widget foodShimmerEffect() =>  ListTile(
+  Widget foodShimmerEffect() => ListTile(
         title: Align(
           alignment: Alignment.bottomLeft,
           child: ShimmerWidget.rectangular(
-            width: MediaQuery.of(context).size.width * 0.3,
-            height: 18),
+              width: MediaQuery.of(context).size.width * 0.3, height: 18),
         ),
-        subtitle:const  ShimmerWidget.rectangular(height: 14),
+        subtitle: const ShimmerWidget.rectangular(height: 14),
         leading: const ShimmerWidget.circular(
           height: 80,
           width: 70,

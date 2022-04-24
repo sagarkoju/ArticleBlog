@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:vlogpost/screen/bottom_overflow.dart';
+import 'package:vlogpost/screen/checkbox.dart';
 import 'package:vlogpost/screen/dropdown.dart';
 import 'package:vlogpost/screen/duplicate_list.dart';
 import 'package:vlogpost/screen/fold_screen.dart';
 import 'package:vlogpost/screen/gridview.dart';
+import 'package:vlogpost/screen/page_view.dart';
 import 'package:vlogpost/screen/popup_menu_button.dart';
 import 'package:vlogpost/screen/remove_where.dart';
 import 'package:vlogpost/screen/selectable_text.dart';
@@ -184,6 +186,32 @@ class _TextScreenState extends State<TextScreen> {
                           builder: (_) => const DropDownScreen()));
                 },
                 child: const Text('DropDown in Flutter'),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (_) => const CheckBoxScreen()));
+                },
+                child: const Text('CheckBox in Flutter'),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (_) => const PageViewScreen()));
+                },
+                child: const Text('PageView in Flutter'),
               ),
             ),
             Container(

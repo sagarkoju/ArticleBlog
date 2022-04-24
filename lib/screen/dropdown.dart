@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:vlogpost/data/menu_item_data.dart';
+import 'package:vlogpost/model/menu_item.dart';
 
 class DropDownScreen extends StatefulWidget {
   const DropDownScreen({Key? key}) : super(key: key);
@@ -15,8 +17,18 @@ class _DropDownScreenState extends State<DropDownScreen> {
     'Orange',
     'Grape',
   ];
+
+  List<MenuItem> menuItems = [];
+  @override
+  void initState() {
+    menuItems = List.of(MenuItems.itemMenu);
+    super.initState();
+  }
+
   String dropdown = 'Apple';
+  MenuItem dropdownValue = MenuItems.itemMenu.first;
   final _dropdownFormKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,8 +87,8 @@ class _DropDownScreenState extends State<DropDownScreen> {
               onPressed: () {
                 if (_dropdownFormKey.currentState!.validate()) {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Food successfully added'),
+                    SnackBar(
+                      content: Text('$dropdown successfully added'),
                     ),
                   );
                 }
@@ -84,38 +96,47 @@ class _DropDownScreenState extends State<DropDownScreen> {
               child: const Text("Submit"),
             ),
             Container(
-              alignment: Alignment.center,
               padding: const EdgeInsets.symmetric(horizontal: 15),
               width: double.infinity / 2,
               margin: const EdgeInsets.only(
                 left: 20,
                 right: 20,
-                top: 20,
+                bottom: 20,
               ),
               decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border.all(
-                  width: 1,
-                  color: Colors.black38,
-                ),
-                borderRadius: BorderRadius.circular(06),
-              ),
+                  border: Border.all(
+                width: 1,
+                color: Colors.black26,
+              )),
               child: StatefulBuilder(builder: ((context, setState) {
-                return DropdownButton<String>(
+                return DropdownButton<MenuItem>(
+                  isExpanded: true,
                   underline: const SizedBox(),
-                  value: dropdown,
+                  value: dropdownValue,
                   icon: const Align(
                       alignment: Alignment.centerRight,
                       child: Icon(Icons.keyboard_arrow_down)),
-                  items: item.map((e) {
-                    return DropdownMenuItem<String>(
+                  items: menuItems.map((e) {
+                    return DropdownMenuItem<MenuItem>(
                       value: e,
-                      child: Text(e),
+                      child: Row(
+                        children: [
+                          Icon(
+                            e.icon,
+                            size: 20,
+                            color: Colors.black12,
+                          ),
+                          const SizedBox(
+                            width: 15,
+                          ),
+                          Text(e.text),
+                        ],
+                      ),
                     );
                   }).toList(),
-                  onChanged: (String? value) {
+                  onChanged: (MenuItem? value) {
                     setState(() {
-                      dropdown = value!;
+                      dropdownValue = value!;
                     });
                   },
                 );

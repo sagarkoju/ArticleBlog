@@ -11,11 +11,11 @@ class GridViewScreen extends StatefulWidget {
 }
 
 class _GridViewScreenState extends State<GridViewScreen> {
-  List<Food> food = [];
+  List<Fruit> food = [];
 
   @override
   void initState() {
-    food = List.of(foods);
+    food = List.of(fruits);
     super.initState();
   }
 
@@ -44,13 +44,18 @@ class _GridViewScreenState extends State<GridViewScreen> {
     );
   }
 
-  Widget showListTileGrid(Food food) => Card(
+  Widget showListTileGrid(Fruit food) => Card(
         child: Column(
           children: [
             Expanded(
               child: InkWell(
-                onTap: (){
-               Navigator.push(context, MaterialPageRoute(builder: (_)=>  GridViewDetailScreen(food: food,)));
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (_) => GridViewDetailScreen(
+                                food: food,
+                              )));
                 },
                 child: Container(
                   decoration: BoxDecoration(
