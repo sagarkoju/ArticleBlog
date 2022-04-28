@@ -11,6 +11,7 @@ import 'package:vlogpost/screen/popup_menu_button.dart';
 import 'package:vlogpost/screen/remove_where.dart';
 import 'package:vlogpost/screen/selectable_text.dart';
 import 'package:vlogpost/screen/shimmer_effect.dart';
+import 'package:vlogpost/screen/spread_operator.dart';
 import 'package:vlogpost/screen/visibility.dart';
 
 void main() {
@@ -134,201 +135,218 @@ class _TextScreenState extends State<TextScreen> {
         backgroundColor: Colors.teal,
       ),
       body: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (_) => const DuplicateListScreen()));
-                },
-                child: const Text('Checking Duplicate List'),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const DuplicateListScreen()));
+                  },
+                  child: const Text('Checking Duplicate List'),
+                ),
               ),
-            ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => const LoginScreen()));
-                },
-                child: const Text('Bottom overflow'),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => const LoginScreen()));
+                  },
+                  child: const Text('Bottom overflow'),
+                ),
               ),
-            ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (_) => const VisibilityScreen()));
-                },
-                child: const Text('Visibility Widget'),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const VisibilityScreen()));
+                  },
+                  child: const Text('Visibility Widget'),
+                ),
               ),
-            ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (_) => const DropDownScreen()));
-                },
-                child: const Text('DropDown in Flutter'),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const DropDownScreen()));
+                  },
+                  child: const Text('DropDown in Flutter'),
+                ),
               ),
-            ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (_) => const CheckBoxScreen()));
-                },
-                child: const Text('CheckBox in Flutter'),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const CheckBoxScreen()));
+                  },
+                  child: const Text('CheckBox in Flutter'),
+                ),
               ),
-            ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (_) => const PageViewScreen()));
-                },
-                child: const Text('PageView in Flutter'),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const PageViewScreen()));
+                  },
+                  child: const Text('PageView in Flutter'),
+                ),
               ),
-            ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (_) => const GridViewScreen()));
-                },
-                child: const Text('GridView in Flutter'),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const GridViewScreen()));
+                  },
+                  child: const Text('GridView in Flutter'),
+                ),
               ),
-            ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (_) => const PopMenuButtonScreen()));
-                },
-                child: const Text('PopupMenu Button in Flutter'),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const PopMenuButtonScreen()));
+                  },
+                  child: const Text('PopupMenu Button in Flutter'),
+                ),
               ),
-            ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => const ShimmerScreen()));
-                },
-                child: const Text('Shimmer Effect'),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const ShimmerScreen()));
+                  },
+                  child: const Text('Shimmer Effect'),
+                ),
               ),
-            ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (_) => const SelectableTextScreen()));
-                },
-                child: const Text('Selectable Text'),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const SelectableTextScreen()));
+                  },
+                  child: const Text('Selectable Text'),
+                ),
               ),
-            ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (_) => const RemoveWhereScreem()));
-                },
-                child: const Text('Remove Where Method'),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => SpreadOperatorScreen()));
+                  },
+                  child: const Text('Spread Operator in Flutter'),
+                ),
               ),
-            ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => const FoldScreen()));
-                },
-                child: const Text('Fold Method'),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const RemoveWhereScreem()));
+                  },
+                  child: const Text('Remove Where Method'),
+                ),
               ),
-            ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  _selectDate(context);
-                  showDate = true;
-                },
-                child: const Text('Date Picker'),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => const FoldScreen()));
+                  },
+                  child: const Text('Fold Method'),
+                ),
               ),
-            ),
-            showDate ? Center(child: Text(getDate())) : const SizedBox(),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  _selectTime(context);
-                  showTime = true;
-                },
-                child: const Text('Timer Picker'),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    _selectDate(context);
+                    showDate = true;
+                  },
+                  child: const Text('Date Picker'),
+                ),
               ),
-            ),
-            showTime
-                ? Center(child: Text(getTime(selectedTime)))
-                : const SizedBox(),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  _selectDateTime(context);
-                  showDateTime = true;
-                },
-                child: const Text('Select Date and Time Picker'),
+              showDate ? Center(child: Text(getDate())) : const SizedBox(),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    _selectTime(context);
+                    showTime = true;
+                  },
+                  child: const Text('Timer Picker'),
+                ),
               ),
-            ),
-            showDateTime
-                ? Center(child: Text(getDateTime()))
-                : const SizedBox(),
-          ],
+              showTime
+                  ? Center(child: Text(getTime(selectedTime)))
+                  : const SizedBox(),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    _selectDateTime(context);
+                    showDateTime = true;
+                  },
+                  child: const Text('Select Date and Time Picker'),
+                ),
+              ),
+              showDateTime
+                  ? Center(child: Text(getDateTime()))
+                  : const SizedBox(),
+            ],
+          ),
         ),
       ),
     );
