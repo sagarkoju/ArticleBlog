@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:vlogpost/screen/Animated_progress_indicator.dart';
 import 'package:vlogpost/screen/bottom_overflow.dart';
 import 'package:vlogpost/screen/checkbox.dart';
 import 'package:vlogpost/screen/dropdown.dart';
 import 'package:vlogpost/screen/duplicate_list.dart';
 import 'package:vlogpost/screen/fold_screen.dart';
 import 'package:vlogpost/screen/gridview.dart';
+import 'package:vlogpost/screen/loading_spinner_button.dart';
 import 'package:vlogpost/screen/page_view.dart';
 import 'package:vlogpost/screen/popup_menu_button.dart';
 import 'package:vlogpost/screen/remove_where.dart';
@@ -279,6 +281,33 @@ class _TextScreenState extends State<TextScreen> {
                             builder: (_) => SpreadOperatorScreen()));
                   },
                   child: const Text('Spread Operator in Flutter'),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) =>
+                                const LoadingSpinnerButtonScreen()));
+                  },
+                  child: const Text('Loading Spinner in Flutter'),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const AnimatedProgressScreen()));
+                  },
+                  child: const Text('Animated Progress Button in Flutter'),
                 ),
               ),
               Container(
