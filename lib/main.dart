@@ -6,6 +6,7 @@ import 'package:vlogpost/screen/bottom_overflow.dart';
 import 'package:vlogpost/screen/checkbox.dart';
 import 'package:vlogpost/screen/dropdown.dart';
 import 'package:vlogpost/screen/duplicate_list.dart';
+import 'package:vlogpost/screen/filter_search_list.dart';
 import 'package:vlogpost/screen/fold_screen.dart';
 import 'package:vlogpost/screen/gridview.dart';
 import 'package:vlogpost/screen/loading_spinner_button.dart';
@@ -322,6 +323,19 @@ class _TextScreenState extends State<TextScreen> {
                             builder: (_) => const AnimatedIconScreen()));
                   },
                   child: const Text('Animated Icon in Flutter'),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const SearchFilterScreen()));
+                  },
+                  child: const Text('Filter ListView in Flutter'),
                 ),
               ),
               Container(
