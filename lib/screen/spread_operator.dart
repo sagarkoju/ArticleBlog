@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 
-class SpreadOperatorScreen extends StatelessWidget {
-  SpreadOperatorScreen({Key? key}) : super(key: key);
+class SpreadOperatorScreen extends StatefulWidget {
+  const SpreadOperatorScreen({Key? key}) : super(key: key);
+
+  @override
+  State<SpreadOperatorScreen> createState() => _SpreadOperatorScreenState();
+}
+
+class _SpreadOperatorScreenState extends State<SpreadOperatorScreen> {
   List<String> data = [
     'Apple',
     'Banana',
@@ -12,6 +18,7 @@ class SpreadOperatorScreen extends StatelessWidget {
     'Papaya',
     'Coconut',
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

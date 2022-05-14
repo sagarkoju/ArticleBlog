@@ -4,11 +4,13 @@ import 'package:vlogpost/screen/Animated_progress_indicator.dart';
 import 'package:vlogpost/screen/animated_icons.dart';
 import 'package:vlogpost/screen/bottom_overflow.dart';
 import 'package:vlogpost/screen/checkbox.dart';
+import 'package:vlogpost/screen/custom_painter.dart';
 import 'package:vlogpost/screen/dropdown.dart';
 import 'package:vlogpost/screen/duplicate_list.dart';
 import 'package:vlogpost/screen/filter_search_list.dart';
 import 'package:vlogpost/screen/fold_screen.dart';
 import 'package:vlogpost/screen/gridview.dart';
+import 'package:vlogpost/screen/interactive_viewer.dart';
 import 'package:vlogpost/screen/loading_spinner_button.dart';
 import 'package:vlogpost/screen/page_view.dart';
 import 'package:vlogpost/screen/popup_menu_button.dart';
@@ -162,6 +164,34 @@ class _TextScreenState extends State<TextScreen> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const InteractiveImageScreen()));
+                  },
+                  child: const Text('Interactive Image in Flutter'),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const CustomePainterScreen(
+                                  progress: 0.5,
+                                )));
+                  },
+                  child: const Text('Custom Painter in flutter'),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (_) => const LoginScreen()));
                   },
@@ -280,7 +310,7 @@ class _TextScreenState extends State<TextScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (_) => SpreadOperatorScreen()));
+                            builder: (_) => const SpreadOperatorScreen()));
                   },
                   child: const Text('Spread Operator in Flutter'),
                 ),
