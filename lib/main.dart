@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:vlogpost/screen/Animated_progress_indicator.dart';
 import 'package:vlogpost/screen/animated_icons.dart';
 import 'package:vlogpost/screen/bottom_overflow.dart';
+import 'package:vlogpost/screen/cascade_operator.dart';
 import 'package:vlogpost/screen/checkbox.dart';
 import 'package:vlogpost/screen/custom_painter.dart';
 import 'package:vlogpost/screen/dropdown.dart';
@@ -170,6 +171,19 @@ class _TextScreenState extends State<TextScreen> {
                             builder: (_) => const InteractiveImageScreen()));
                   },
                   child: const Text('Interactive Image in Flutter'),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const CascadeScreen()));
+                  },
+                  child: const Text('Cascade Operator in flutter'),
                 ),
               ),
               Container(

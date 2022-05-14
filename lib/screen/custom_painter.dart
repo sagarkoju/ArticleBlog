@@ -31,6 +31,13 @@ class _CustomePainterScreenState extends State<CustomePainterScreen> {
                 taskCompletedColor: Colors.green,
               ),
             ),
+          ),
+          const Text(
+            'Custom Painter in Flutter',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 25,
+            ),
           )
         ],
       ),
