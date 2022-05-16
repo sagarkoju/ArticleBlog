@@ -20,6 +20,7 @@ import 'package:vlogpost/screen/popup_menu_button.dart';
 import 'package:vlogpost/screen/remove_where.dart';
 import 'package:vlogpost/screen/selectable_text.dart';
 import 'package:vlogpost/screen/shimmer_effect.dart';
+import 'package:vlogpost/screen/snackbar.dart';
 import 'package:vlogpost/screen/spread_operator.dart';
 import 'package:vlogpost/screen/visibility.dart';
 
@@ -160,6 +161,19 @@ class _TextScreenState extends State<TextScreen> {
                             builder: (_) => const DuplicateListScreen()));
                   },
                   child: const Text('Checking Duplicate List'),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const SnackBarScreen()));
+                  },
+                  child: const Text('SnackBar in Flutter'),
                 ),
               ),
               Container(
