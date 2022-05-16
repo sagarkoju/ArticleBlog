@@ -62,7 +62,8 @@ class RectanglePainter extends CustomPainter {
     final rect = Rect.fromPoints(a, b);
     const radius = Radius.circular(32);
     canvas.drawRect(rect, paint);
-    canvas.drawRRect(RRect.fromRectAndRadius(rect, radius), paint);
+    canvas.drawRRect(
+        RRect.fromRectAndRadius(rect, radius), paint); // for rounded rectangle
   }
 
   @override
