@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:image_cropper/image_cropper.dart';
 import 'package:intl/intl.dart';
+import 'package:vlogpost/Bloc/bloc/sign_in_bloc.dart';
 import 'package:vlogpost/screen/Animated_progress_indicator.dart';
 import 'package:vlogpost/screen/alert_dialog.dart';
 import 'package:vlogpost/screen/animated_icons.dart';
@@ -292,8 +293,13 @@ class _TextScreenState extends State<TextScreen> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => const LoginScreen()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => BlocProvider(
+                                  create: (context) => SignInBloc(),
+                                  child: const LoginScreen(),
+                                )));
                   },
                   child: const Text('Bottom overflow'),
                 ),
