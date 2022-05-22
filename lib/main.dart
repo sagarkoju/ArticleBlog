@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:image_cropper/image_cropper.dart';
 import 'package:intl/intl.dart';
 import 'package:vlogpost/screen/Animated_progress_indicator.dart';
 import 'package:vlogpost/screen/alert_dialog.dart';
@@ -7,12 +9,14 @@ import 'package:vlogpost/screen/bottom_overflow.dart';
 import 'package:vlogpost/screen/bottom_sheet.dart';
 import 'package:vlogpost/screen/cascade_operator.dart';
 import 'package:vlogpost/screen/checkbox.dart';
+import 'package:vlogpost/screen/cropper_image.dart';
 import 'package:vlogpost/screen/custom_painter.dart';
 import 'package:vlogpost/screen/dropdown.dart';
 import 'package:vlogpost/screen/duplicate_list.dart';
 import 'package:vlogpost/screen/filter_search_list.dart';
 import 'package:vlogpost/screen/fold_screen.dart';
 import 'package:vlogpost/screen/gridview.dart';
+import 'package:vlogpost/screen/image_picker.dart';
 import 'package:vlogpost/screen/interactive_viewer.dart';
 import 'package:vlogpost/screen/loading_spinner_button.dart';
 import 'package:vlogpost/screen/navigation.dart';
@@ -26,7 +30,7 @@ import 'package:vlogpost/screen/spread_operator.dart';
 import 'package:vlogpost/screen/visibility.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -186,6 +190,32 @@ class _TextScreenState extends State<TextScreen> {
                         MaterialPageRoute(builder: (_) => const AlertScreen()));
                   },
                   child: const Text('AlertDialog in Flutter'),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const ImageCroppersScreens()));
+                  },
+                  child: const Text('Image Cropper in Flutter'),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const ImagePickerScreen()));
+                  },
+                  child: const Text('Image Picker in Flutter'),
                 ),
               ),
               Container(
