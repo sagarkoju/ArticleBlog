@@ -11,6 +11,7 @@ import 'package:vlogpost/screen/bottom_sheet.dart';
 import 'package:vlogpost/screen/cascade_operator.dart';
 import 'package:vlogpost/screen/checkbox.dart';
 import 'package:vlogpost/screen/cropper_image.dart';
+import 'package:vlogpost/screen/cupertino_action_sheet.dart';
 import 'package:vlogpost/screen/custom_painter.dart';
 import 'package:vlogpost/screen/dropdown.dart';
 import 'package:vlogpost/screen/duplicate_list.dart';
@@ -167,6 +168,19 @@ class _TextScreenState extends State<TextScreen> {
                             builder: (_) => const DuplicateListScreen()));
                   },
                   child: const Text('Checking Duplicate List'),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const CupertinoScreen()));
+                  },
+                  child: const Text('Cupertino Action Sheet'),
                 ),
               ),
               Container(
