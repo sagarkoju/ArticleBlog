@@ -6,6 +6,7 @@ import 'package:vlogpost/Bloc/bloc/sign_in_bloc.dart';
 import 'package:vlogpost/screen/Animated_progress_indicator.dart';
 import 'package:vlogpost/screen/alert_dialog.dart';
 import 'package:vlogpost/screen/animated_icons.dart';
+import 'package:vlogpost/screen/back_drop_filter.dart';
 import 'package:vlogpost/screen/bottom_overflow.dart';
 import 'package:vlogpost/screen/bottom_sheet.dart';
 import 'package:vlogpost/screen/cascade_operator.dart';
@@ -15,6 +16,7 @@ import 'package:vlogpost/screen/cupertino_action_sheet.dart';
 import 'package:vlogpost/screen/custom_painter.dart';
 import 'package:vlogpost/screen/dropdown.dart';
 import 'package:vlogpost/screen/duplicate_list.dart';
+import 'package:vlogpost/screen/emoji_picker.dart';
 import 'package:vlogpost/screen/filter_search_list.dart';
 import 'package:vlogpost/screen/fold_screen.dart';
 import 'package:vlogpost/screen/gridview.dart';
@@ -181,6 +183,30 @@ class _TextScreenState extends State<TextScreen> {
                             builder: (_) => const CupertinoScreen()));
                   },
                   child: const Text('Cupertino Action Sheet'),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => const EmojiScreen()));
+                  },
+                  child: const Text('Emoji Picker in Flutter'),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const BackDropScreen()));
+                  },
+                  child: const Text('Back Drop Filter in Flutter'),
                 ),
               ),
               Container(
