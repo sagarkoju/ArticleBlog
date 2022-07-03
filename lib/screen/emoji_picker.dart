@@ -95,7 +95,6 @@ class _EmojiScreenState extends State<EmojiScreen> {
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),
-                // prefixIcon: Icon(icon)
               ),
             ),
           ),

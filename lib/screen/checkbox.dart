@@ -9,13 +9,13 @@ class CheckBoxScreen extends StatefulWidget {
 }
 
 class _CheckBoxScreenState extends State<CheckBoxScreen> {
-  final selectAllFruits = Fruit(text: 'Select All Fruits');
+  final selectAllFruits = Fruits(text: 'Select All Fruits');
   final fruits = [
-    Fruit(text: 'Apple'),
-    Fruit(text: 'Grape'),
-    Fruit(text: 'Orange'),
-    Fruit(text: 'Mango'),
-    Fruit(text: 'Banana'),
+    Fruits(text: 'Apple'),
+    Fruits(text: 'Grape'),
+    Fruits(text: 'Orange'),
+    Fruits(text: 'Mango'),
+    Fruits(text: 'Banana'),
   ];
 
   @override
@@ -52,7 +52,7 @@ class _CheckBoxScreenState extends State<CheckBoxScreen> {
         ]));
   }
 
-  Widget customCheckListTile(Fruit fruit) {
+  Widget customCheckListTile(Fruits fruit) {
     return CheckboxListTile(
         activeColor: Colors.green,
         title: Text(

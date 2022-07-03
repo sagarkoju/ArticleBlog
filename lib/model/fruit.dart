@@ -1,8 +1,8 @@
-class Fruit {
+class Fruits {
   String text;
   bool value;
 
-  Fruit({
+  Fruits({
     required this.text,
     this.value = false,
   });

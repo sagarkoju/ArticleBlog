@@ -41,6 +41,8 @@ dependencies:
   shimmer: ^2.0.0
   substring_highlight: ^1.0.33
   emoji_picker_flutter: ^1.0.6
+  url_launcher: ^6.1.4
+  carousel_slider: ^4.1.1
 
 dev_dependencies:
   flutter_lints: ^1.0.0

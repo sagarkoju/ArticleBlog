@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+// import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:vlogpost/Bloc/bloc/sign_in_bloc.dart';
@@ -14,12 +15,14 @@ import 'package:vlogpost/screen/checkbox.dart';
 import 'package:vlogpost/screen/cropper_image.dart';
 import 'package:vlogpost/screen/cupertino_action_sheet.dart';
 import 'package:vlogpost/screen/custom_painter.dart';
+import 'package:vlogpost/screen/drawer.dart';
 import 'package:vlogpost/screen/dropdown.dart';
 import 'package:vlogpost/screen/duplicate_list.dart';
 import 'package:vlogpost/screen/emoji_picker.dart';
 import 'package:vlogpost/screen/filter_search_list.dart';
 import 'package:vlogpost/screen/fold_screen.dart';
 import 'package:vlogpost/screen/gridview.dart';
+import 'package:vlogpost/screen/image_carasoul.dart';
 import 'package:vlogpost/screen/image_picker.dart';
 import 'package:vlogpost/screen/interactive_viewer.dart';
 import 'package:vlogpost/screen/loading_spinner_button.dart';
@@ -31,6 +34,7 @@ import 'package:vlogpost/screen/selectable_text.dart';
 import 'package:vlogpost/screen/shimmer_effect.dart';
 import 'package:vlogpost/screen/snackbar.dart';
 import 'package:vlogpost/screen/spread_operator.dart';
+import 'package:vlogpost/screen/url_launcher.dart';
 import 'package:vlogpost/screen/visibility.dart';
 
 void main() {
@@ -177,6 +181,17 @@ class _TextScreenState extends State<TextScreen> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => const URLScreen()));
+                  },
+                  child: const Text('Url launcher Screen'),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -194,6 +209,19 @@ class _TextScreenState extends State<TextScreen> {
                         MaterialPageRoute(builder: (_) => const EmojiScreen()));
                   },
                   child: const Text('Emoji Picker in Flutter'),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const DrawerScreen()));
+                  },
+                  child: const Text('Drawer Flutter'),
                 ),
               ),
               Container(
@@ -244,6 +272,19 @@ class _TextScreenState extends State<TextScreen> {
                             builder: (_) => const ImageCroppersScreens()));
                   },
                   child: const Text('Image Cropper in Flutter'),
+                ),
+              ),
+               Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const ImageCarasoulScreen()));
+                  },
+                  child: const Text('Image Carasoul Flutter'),
                 ),
               ),
               Container(
