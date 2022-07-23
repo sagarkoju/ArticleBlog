@@ -6,6 +6,7 @@ import 'package:intl/intl.dart';
 import 'package:vlogpost/Bloc/bloc/sign_in_bloc.dart';
 import 'package:vlogpost/screen/Animated_progress_indicator.dart';
 import 'package:vlogpost/screen/alert_dialog.dart';
+import 'package:vlogpost/screen/alphabetical_scroller.dart';
 import 'package:vlogpost/screen/animated_icons.dart';
 import 'package:vlogpost/screen/back_drop_filter.dart';
 import 'package:vlogpost/screen/bottom_overflow.dart';
@@ -24,6 +25,7 @@ import 'package:vlogpost/screen/fold_screen.dart';
 import 'package:vlogpost/screen/gridview.dart';
 import 'package:vlogpost/screen/image_carasoul.dart';
 import 'package:vlogpost/screen/image_picker.dart';
+import 'package:vlogpost/screen/image_save_to_gallery.dart';
 import 'package:vlogpost/screen/interactive_viewer.dart';
 import 'package:vlogpost/screen/loading_spinner_button.dart';
 import 'package:vlogpost/screen/navigation.dart';
@@ -171,9 +173,9 @@ class _TextScreenState extends State<TextScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (_) => const DuplicateListScreen()));
+                            builder: (_) => const ImageSaveScreen()));
                   },
-                  child: const Text('Checking Duplicate List'),
+                  child: const Text('Save Images'),
                 ),
               ),
               Container(
@@ -181,12 +183,39 @@ class _TextScreenState extends State<TextScreen> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => const URLScreen()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) =>
+                                const AlphabeticalScrollerWidegt()));
                   },
-                  child: const Text('Url launcher Screen'),
+                  child: const Text('Alhabetical Scroller'),
                 ),
               ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const DuplicateListScreen()));
+                  },
+                  child: const Text('Checking Duplicate List'),
+                ),
+              ),
+              // Container(
+              //   padding: const EdgeInsets.symmetric(horizontal: 15),
+              //   width: double.infinity,
+              //   child: ElevatedButton(
+              //     onPressed: () {
+              //       Navigator.push(context,
+              //           MaterialPageRoute(builder: (_) => const URLScreen()));
+              //     },
+              //     child: const Text('Url launcher Screen'),
+              //   ),
+              // ),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 width: double.infinity,
@@ -274,7 +303,7 @@ class _TextScreenState extends State<TextScreen> {
                   child: const Text('Image Cropper in Flutter'),
                 ),
               ),
-               Container(
+              Container(
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 width: double.infinity,
                 child: ElevatedButton(
