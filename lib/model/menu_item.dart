@@ -1,10 +1,13 @@
 import 'package:flutter/cupertino.dart';
 
-class MenuItem {
+class MenuItemData {
   final String text;
   final IconData icon;
   final Color menuColors;
 
-  const MenuItem(
-      {required this.text, required this.icon, required this.menuColors,});
+  const MenuItemData({
+    required this.text,
+    required this.icon,
+    required this.menuColors,
+  });
 }

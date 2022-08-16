@@ -3,7 +3,7 @@ import 'package:vlogpost/model/menu_item.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({Key? key, required this.menuItem}) : super(key: key);
-  final MenuItem menuItem;
+  final MenuItemData menuItem;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

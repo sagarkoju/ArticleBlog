@@ -6,7 +6,7 @@ class ShoppingScreen extends StatelessWidget {
     Key? key,
     required this.menuItem,
   }) : super(key: key);
-  final MenuItem menuItem;
+  final MenuItemData menuItem;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

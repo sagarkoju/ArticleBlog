@@ -97,7 +97,6 @@ class _AlphabeticalScrollerWidegtState
     'Rozalthiric',
     'Bookman'
   ];
-  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -120,45 +119,13 @@ class _AlphabeticalScrollerWidegtState
                   color: Colors.black),
               selectedTextStyle: const TextStyle(
                   fontSize: 20, fontWeight: FontWeight.bold, color: Colors.red),
-              overlayWidget: (value) => Stack(
-                alignment: Alignment.center,
-                children: [
-                  const Icon(
-                    Icons.star,
-                    size: 50,
-                    color: Colors.red,
-                  ),
-                  Container(
-                    height: 50,
-                    width: 50,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      // color: Theme.of(context).primaryColor,
-                    ),
-                    alignment: Alignment.center,
-                    child: Text(
-                      '$value'.toUpperCase(),
-                      style: const TextStyle(fontSize: 18, color: Colors.white),
-                    ),
-                  ),
-                ],
-              ),
-              itemBuilder: (_, k, id) {
+
+              itemBuilder: (_, index, string) {
                 return Padding(
                   padding: const EdgeInsets.only(right: 20),
                   child: ListTile(
-                    title: Text('$id'),
-                    subtitle: const Text('Secondary text'),
+                    title: Text(string),
                     leading: const Icon(Icons.person),
-                    trailing: Radio<bool>(
-                      value: false,
-                      groupValue: selectedIndex != k,
-                      onChanged: (value) {
-                        setState(() {
-                          selectedIndex = k;
-                        });
-                      },
-                    ),
                   ),
                 );
               },

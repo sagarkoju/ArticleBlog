@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vlogpost/data/menu_item_data.dart';
+
 import 'package:vlogpost/model/menu_item.dart';
 import 'package:vlogpost/screen/popupmenu/settings.dart';
 import 'package:vlogpost/screen/popupmenu/share.dart';
@@ -20,11 +21,11 @@ class _PopMenuButtonScreenState extends State<PopMenuButtonScreen> {
         title: const Text('PopupMenuButton in flutter'),
         centerTitle: true,
         actions: [
-          PopupMenuButton<MenuItem>(
+          PopupMenuButton<MenuItemData>(
               onSelected: ((item) => onSelected(context, item)),
               itemBuilder: ((context) {
-                return MenuItems.itemMenu.map((e) {
-                  return PopupMenuItem<MenuItem>(
+                return MenuData.itemMenu.map((e) {
+                  return PopupMenuItem<MenuItemData>(
                     value: e,
                     child: Row(
                       children: [
@@ -47,9 +48,9 @@ class _PopMenuButtonScreenState extends State<PopMenuButtonScreen> {
     );
   }
 
-  void onSelected(BuildContext context, MenuItem item) {
+  void onSelected(BuildContext context, MenuItemData item) {
     switch (item) {
-      case MenuItems.menuSettings:
+      case MenuData.menuSettings:
         Navigator.push(
             context,
             MaterialPageRoute(
@@ -57,7 +58,7 @@ class _PopMenuButtonScreenState extends State<PopMenuButtonScreen> {
                       menuItem: item,
                     )));
         break;
-      case MenuItems.menuCheck:
+      case MenuData.menuCheck:
         Navigator.push(
             context,
             MaterialPageRoute(
@@ -65,7 +66,7 @@ class _PopMenuButtonScreenState extends State<PopMenuButtonScreen> {
                       menuItem: item,
                     )));
         break;
-      case MenuItems.menuRate:
+      case MenuData.menuRate:
         Navigator.push(
             context,
             MaterialPageRoute(

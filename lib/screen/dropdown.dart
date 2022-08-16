@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vlogpost/data/menu_item_data.dart';
+
 import 'package:vlogpost/model/menu_item.dart';
 
 class DropDownScreen extends StatefulWidget {
@@ -18,15 +19,15 @@ class _DropDownScreenState extends State<DropDownScreen> {
     'Grape',
   ];
 
-  List<MenuItem> menuItems = [];
+  List<MenuItemData> menuItems = [];
   @override
   void initState() {
-    menuItems = List.of(MenuItems.itemMenu);
+    menuItems = List.of(MenuData.itemMenu);
     super.initState();
   }
 
   String dropdown = 'Apple';
-  MenuItem dropdownValue = MenuItems.itemMenu.first;
+  MenuItemData dropdownValue = MenuData.itemMenu.first;
   final _dropdownFormKey = GlobalKey<FormState>();
 
   @override
@@ -109,7 +110,7 @@ class _DropDownScreenState extends State<DropDownScreen> {
                 color: Colors.black26,
               )),
               child: StatefulBuilder(builder: ((context, setState) {
-                return DropdownButton<MenuItem>(
+                return DropdownButton<MenuItemData>(
                   isExpanded: true,
                   underline: const SizedBox(),
                   value: dropdownValue,
@@ -117,7 +118,7 @@ class _DropDownScreenState extends State<DropDownScreen> {
                       alignment: Alignment.centerRight,
                       child: Icon(Icons.keyboard_arrow_down)),
                   items: menuItems.map((e) {
-                    return DropdownMenuItem<MenuItem>(
+                    return DropdownMenuItem<MenuItemData>(
                       value: e,
                       child: Row(
                         children: [
@@ -134,7 +135,7 @@ class _DropDownScreenState extends State<DropDownScreen> {
                       ),
                     );
                   }).toList(),
-                  onChanged: (MenuItem? value) {
+                  onChanged: (MenuItemData? value) {
                     setState(() {
                       dropdownValue = value!;
                     });

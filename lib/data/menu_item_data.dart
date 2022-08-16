@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:vlogpost/model/menu_item.dart';
 
-class MenuItems {
-  static const List<MenuItem> itemMenu = [
+class MenuData {
+  static const List<MenuItemData> itemMenu = [
     menuSettings,
     menuCheck,
     menuRate,
   ];
-  static const menuSettings = MenuItem(
+  static const menuSettings = MenuItemData(
     text: 'Settings',
     icon: Icons.settings,
     menuColors: Colors.amber,
   );
-  static const menuRate = MenuItem(
+  static const menuRate = MenuItemData(
     text: 'Rate',
     icon: Icons.star,
     menuColors: Colors.blueAccent,
   );
-  static const menuCheck = MenuItem(
+  static const menuCheck = MenuItemData(
     text: 'Check Out',
     icon: Icons.shopping_basket,
     menuColors: Colors.green,

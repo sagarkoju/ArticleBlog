@@ -4,10 +4,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:vlogpost/Bloc/bloc/sign_in_bloc.dart';
+import 'package:vlogpost/Bloc/switch_bloc.dart';
+import 'package:vlogpost/Utils/app_theme_color.dart';
 import 'package:vlogpost/screen/Animated_progress_indicator.dart';
 import 'package:vlogpost/screen/alert_dialog.dart';
 import 'package:vlogpost/screen/alphabetical_scroller.dart';
 import 'package:vlogpost/screen/animated_icons.dart';
+import 'package:vlogpost/screen/app_theme.dart';
 import 'package:vlogpost/screen/back_drop_filter.dart';
 import 'package:vlogpost/screen/bottom_overflow.dart';
 import 'package:vlogpost/screen/bottom_sheet.dart';
@@ -36,11 +39,16 @@ import 'package:vlogpost/screen/selectable_text.dart';
 import 'package:vlogpost/screen/shimmer_effect.dart';
 import 'package:vlogpost/screen/snackbar.dart';
 import 'package:vlogpost/screen/spread_operator.dart';
-import 'package:vlogpost/screen/url_launcher.dart';
 import 'package:vlogpost/screen/visibility.dart';
 
 void main() {
-  runApp(const ProviderScope(child: MyApp()));
+  runApp(MultiBlocProvider(
+    providers: [
+      BlocProvider(create: (context) => SwitchBloc()),
+      BlocProvider(create: (context) => SignInBloc()),
+    ],
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -48,9 +56,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: TextScreen(),
+    return BlocBuilder<SwitchBloc, SwitchState>(
+      // bloc: SwitchBloc(),
+      builder: (context, state) {
+        return MaterialApp(
+          theme: state.switchValue
+              ? AppThemes.appThemeData[AppTheme.darkTheme]
+              : AppThemes.appThemeData[AppTheme.lightTheme],
+          debugShowCheckedModeBanner: false,
+          home: const TextScreen(),
+        );
+      },
     );
   }
 }
@@ -178,6 +194,32 @@ class _TextScreenState extends State<TextScreen> {
                   child: const Text('Save Images'),
                 ),
               ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const SwitchScreen()));
+                  },
+                  child: const Text('Switch using bloc'),
+                ),
+              ),
+              // Container(
+              //   padding: const EdgeInsets.symmetric(horizontal: 15),
+              //   width: double.infinity,
+              //   child: ElevatedButton(
+              //     onPressed: () {
+              //       Navigator.push(
+              //           context,
+              //           MaterialPageRoute(
+              //               builder: (_) => const QrCodeScreen()));
+              //     },
+              //     child: const Text('Qr code Scanner'),
+              //   ),
+              // ),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 width: double.infinity,
@@ -403,13 +445,8 @@ class _TextScreenState extends State<TextScreen> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (_) => BlocProvider(
-                                  create: (context) => SignInBloc(),
-                                  child: const LoginScreen(),
-                                )));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => const LoginScreen()));
                   },
                   child: const Text('Bottom overflow'),
                 ),
