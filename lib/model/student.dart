@@ -19,9 +19,11 @@ class Students {
 
 class Fruit {
   String name, desc, url;
+  int id;
   Fruit({
     required this.name,
     required this.desc,
     required this.url,
+    required this.id,
   });
 }
