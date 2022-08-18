@@ -1,5 +1,3 @@
-// import 'package:flutter/material.dart';
-// import 'package:url_launcher/url_launcher.dart';
 
 // class URLScreen extends StatefulWidget {
 //   const URLScreen({Key? key}) : super(key: key);
@@ -12,7 +10,8 @@
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
-//       appBar: AppBar(
+// /
+// /       appBar: AppBar(
 //         title: const Text('Url Launcher in Flutter'),
 //         centerTitle: true,
 //       ),
