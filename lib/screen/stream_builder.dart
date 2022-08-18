@@ -8,7 +8,7 @@ class StreamScreen extends StatefulWidget {
 }
 
 class _StreamScreenState extends State<StreamScreen> {
-  Stream<int> generateNumbers() async* {
+  Stream<int> generateNumber() async* {
     await Future<void>.delayed(const Duration(seconds: 2));
 
     for (int i = 1; i <= 10; i++) {
@@ -28,7 +28,7 @@ class _StreamScreenState extends State<StreamScreen> {
         width: double.infinity,
         child: Center(
           child: StreamBuilder<int>(
-            stream: generateNumbers(),
+            stream: generateNumber(),
             initialData: 0,
             builder: (
               BuildContext context,

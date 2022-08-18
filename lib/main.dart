@@ -36,6 +36,7 @@ import 'package:vlogpost/screen/interactive_viewer.dart';
 import 'package:vlogpost/screen/loading_spinner_button.dart';
 import 'package:vlogpost/screen/navigation.dart';
 import 'package:vlogpost/screen/page_view.dart';
+import 'package:vlogpost/screen/paginated_datatable.dart';
 import 'package:vlogpost/screen/popup_menu_button.dart';
 import 'package:vlogpost/screen/remove_where.dart';
 import 'package:vlogpost/screen/selectable_text.dart';
@@ -238,6 +239,20 @@ class _TextScreenState extends State<TextScreen> {
                               builder: (_) => const BadgeScreen()));
                     },
                     child: const Text('Bagde in flutter'),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) =>
+                                  const PaginatedDataTableScreen()));
+                    },
+                    child: const Text('Paginated Table in flutter'),
                   ),
                 ),
                 Container(
