@@ -1,0 +1,29 @@
+{
+    "items": [
+        {
+            "id": "1",
+            "name": "Apple",
+            "description": "An apple is an edible fruit produced by an apple tree (Malus domestica). Apple trees are cultivated worldwide and are the most widely grown species in the"
+        },
+        {
+            "id": "2",
+            "name": "Banana",
+            "description": "banana is an elongated, edible fruit - botanically a berry - produced by several kinds of large herbaceous flowering plants in the genus Musa."
+        },
+        {
+            "id": "3",
+            "name": "Grape",
+            "description": "The grapefruit (Citrus × paradisi) is a subtropical citrus tree known for its relatively large, sour to semi-sweet, somewhat bitter fruit."
+        },
+        {
+            "id": "4",
+            "name": "Mango",
+            "description": "A mango is an edible stone fruit produced by the tropical tree Mangifera indica which is believed to have originated from the region between northwestern "
+        },
+        {
+            "id": "5",
+            "name": "Orange",
+            "description": "An orange is a fruit of various citrus species in the family Rutaceae ); it primarily refers to Citrus × sinensis, which is also called sweet orange"
+        }
+    ]
+}

@@ -38,6 +38,7 @@ import 'package:vlogpost/screen/navigation.dart';
 import 'package:vlogpost/screen/page_view.dart';
 import 'package:vlogpost/screen/paginated_datatable.dart';
 import 'package:vlogpost/screen/popup_menu_button.dart';
+import 'package:vlogpost/screen/read_data_localjson.dart';
 import 'package:vlogpost/screen/remove_where.dart';
 import 'package:vlogpost/screen/selectable_text.dart';
 import 'package:vlogpost/screen/shimmer_effect.dart';
@@ -239,6 +240,19 @@ class _TextScreenState extends State<TextScreen> {
                               builder: (_) => const BadgeScreen()));
                     },
                     child: const Text('Bagde in flutter'),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => const LocalJsonScreen()));
+                    },
+                    child: const Text('Read Json data  flutter'),
                   ),
                 ),
                 Container(
