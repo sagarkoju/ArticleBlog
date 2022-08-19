@@ -48,6 +48,7 @@ import 'package:vlogpost/screen/spread_operator.dart';
 import 'package:vlogpost/screen/stream_builder.dart';
 import 'package:vlogpost/screen/tabbar.dart';
 import 'package:vlogpost/screen/visibility.dart';
+import 'package:vlogpost/screen/webview.dart';
 
 void main() {
   runApp(MultiBlocProvider(
@@ -241,6 +242,19 @@ class _TextScreenState extends State<TextScreen> {
                               builder: (_) => const BadgeScreen()));
                     },
                     child: const Text('Bagde in flutter'),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => const WebViewScreen()));
+                    },
+                    child: const Text('Web View flutter'),
                   ),
                 ),
                 Container(
