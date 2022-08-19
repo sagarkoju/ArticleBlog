@@ -46,6 +46,7 @@ import 'package:vlogpost/screen/slidable.dart';
 import 'package:vlogpost/screen/snackbar.dart';
 import 'package:vlogpost/screen/spread_operator.dart';
 import 'package:vlogpost/screen/stream_builder.dart';
+import 'package:vlogpost/screen/tabbar.dart';
 import 'package:vlogpost/screen/visibility.dart';
 
 void main() {
@@ -240,6 +241,19 @@ class _TextScreenState extends State<TextScreen> {
                               builder: (_) => const BadgeScreen()));
                     },
                     child: const Text('Bagde in flutter'),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => const TabBarScreen()));
+                    },
+                    child: const Text('Tab Bar  flutter'),
                   ),
                 ),
                 Container(
