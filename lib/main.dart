@@ -17,6 +17,7 @@ import 'package:vlogpost/screen/bottom_sheet.dart';
 import 'package:vlogpost/screen/cascade_operator.dart';
 import 'package:vlogpost/screen/checkbox.dart';
 import 'package:vlogpost/screen/chip.dart';
+import 'package:vlogpost/screen/conectivity_plus.dart';
 import 'package:vlogpost/screen/cropper_image.dart';
 import 'package:vlogpost/screen/cupertino_action_sheet.dart';
 import 'package:vlogpost/screen/custom_painter.dart';
@@ -229,6 +230,19 @@ class _TextScreenState extends State<TextScreen> {
                               builder: (_) => const ImageSaveScreen()));
                     },
                     child: const Text('Save Images'),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => const ConnectivityScreen()));
+                    },
+                    child: const Text('Connectivity in flutter'),
                   ),
                 ),
                 Container(
