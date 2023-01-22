@@ -41,8 +41,10 @@ import 'package:vlogpost/screen/paginated_datatable.dart';
 import 'package:vlogpost/screen/popup_menu_button.dart';
 import 'package:vlogpost/screen/read_data_localjson.dart';
 import 'package:vlogpost/screen/remove_where.dart';
+import 'package:vlogpost/screen/reorderablelist.dart';
 import 'package:vlogpost/screen/selectable_text.dart';
 import 'package:vlogpost/screen/shimmer_effect.dart';
+import 'package:vlogpost/screen/silverappbar_animation.dart';
 import 'package:vlogpost/screen/slidable.dart';
 import 'package:vlogpost/screen/snackbar.dart';
 import 'package:vlogpost/screen/spread_operator.dart';
@@ -230,6 +232,33 @@ class _TextScreenState extends State<TextScreen> {
                               builder: (_) => const ImageSaveScreen()));
                     },
                     child: const Text('Save Images'),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => const ReorderAbleListScreen()));
+                    },
+                    child: const Text('ReorderableListView'),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) =>
+                                  const SilverAppBarAnimationScreen()));
+                    },
+                    child: const Text('SilverAppBar with Animation'),
                   ),
                 ),
                 Container(

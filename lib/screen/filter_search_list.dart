@@ -18,7 +18,7 @@ class _SearchFilterScreenState extends State<SearchFilterScreen> {
   List<Fruit> result = [];
   @override
   void initState() {
-    fruitslist = fruits;
+    fruitslist = List.of(fruits);
     super.initState();
   }
 
